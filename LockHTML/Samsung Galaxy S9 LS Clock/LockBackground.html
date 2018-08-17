@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Samsung Galaxy S9 LS Clock By Brian</title>
+<style type="text/css">
+@font-face {
+    font-family: Terpsichora-Digital-Clock;
+    src: url('fonts/Terpsichora-Digital-Clock.ttf');
+}
+
+body {text-transform: uppercase;text-align: center;}
+.container {width: 100%; margin: 0 auto; overflow: hidden;}
+#date {font-family: "Arial";color: #fff;font-size: 8.7px;letter-spacing: 0.1em;}
+.clock {font-family: Terpsichora-Digital-Clock;color: #fff;}
+.clock1 {font-size: 5.0em;}
+ul {margin: 0 auto; padding: 0px; list-style: none;}
+ul li { display: inline;}
+</style>
+
+<script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+window.onload = function() {
+  clock();  
+    function clock() {
+    var now = new Date();
+    var TwentyFourHour = now.getHours();
+    var hour = now.getHours();
+    var min = now.getMinutes();
+    var seconds = new Date().getSeconds();
+    var mid = 'pm';
+    if (min < 10) {
+      min = "0" + min;
+    }
+    if (hour > 12) {
+      hour = hour - 12;
+    }    
+	if (hour === 0){
+      hour = 12;
+    }
+	if (hour<10){
+      hour = "0" + hour;
+    }
+    if(TwentyFourHour < 12) {
+       mid = 'am';
+    }     
+  document.getElementById('time').innerHTML = '<div class="clock1">'+hour+'<br>'+min+'</div>';
+    setTimeout(clock, 1000);
+    }
+}
+
+var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
+var dayNames= ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+
+var newDate = new Date();
+newDate.setDate(newDate.getDate());
+   
+$('#date').html('<br>' +dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()]);
+	
+}); 
+</script>
+</head>
+<body>
+
+<div class="container">
+<div id="iphonescreen">
+<br />
+<div class="clock">
+<ul>
+	<li id="time"></li>
+</ul>
+<div id="date"></div>
+<br />
+</div>
+</div>
+</div>
+</body>
+</html>
