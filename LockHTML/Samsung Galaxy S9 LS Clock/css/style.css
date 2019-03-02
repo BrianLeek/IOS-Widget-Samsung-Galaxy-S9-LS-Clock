@@ -1,0 +1,5 @@
+@font-face{font-family:Terpsichora-Digital-Clock;src:url(../fonts/Terpsichora-Digital-Clock.ttf);}
+body{font-family:Terpsichora-Digital-Clock;overflow:hidden;display:inline;text-transform:uppercase;text-align:center;color:#fff;}
+#date{font-family:"Arial";font-size:8.7px;letter-spacing:.1em;}
+#time{font-size:5em;}
+ul{margin:0 auto;padding:0;list-style:none;}
